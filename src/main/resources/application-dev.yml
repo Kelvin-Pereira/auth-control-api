@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: auth-control-api
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:h2:mem:db;Mode=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS CORPORATIVO
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  flyway:
+    url: jdbc:h2:mem:db;Mode=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS CORPORATIVO
+    user: sa
+    password: sa
+    default-schema: CORPORATIVO
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_schema: CORPORATIVO
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      path: /h2
+      enabled: true
